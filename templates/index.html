@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Watch Prices</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            background-image: url('C:\Users\user\Desktop\smart\sample\71JU-bUt-sL._AC_UF1000,1000_QL80_.jpg');
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+        }
+
+        .navbar-heading {
+            font-size: 30px;
+        }
+
+        .predict_content {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 20px auto; /* Center the container */
+        }
+
+        .environment-conditions {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        .condition-input {
+            margin-top: 10px;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #8CC5E1; /* Light blue border */
+            border-radius: 4px;
+            background-color: #EDF5FE; /* Light blue background */
+        }
+
+        .predict-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .predict-button:hover {
+            background-color: #45a049;
+        }
+
+        .about {
+            background-color: #ADD8E6; /* Light blue background */
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        .about-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact {
+            background-color: #DFF0D8; /* Light green background */
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #5CB85C; /* Dark green border */
+            border-radius: 4px;
+            background-color: #DFF0D8; /* Light green background */
+        }
+
+        .form-input:focus {
+            outline: none;
+            border: 1px solid #4CAF50; /* Dark green on focus */
+        }
+
+        .form-textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #5CB85C; /* Dark green border */
+            border-radius: 4px;
+            background-color: #DFF0D8; /* Light green background */
+        }
+
+        .form-textarea:focus {
+            outline: none;
+            border: 1px solid #4CAF50; /* Dark green on focus */
+        }
+
+        .submit-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="navbar-heading">
+            Smart Watch Prices
+        </div>
+        <div>
+            <a href="#about" style="color: white; text-decoration: none; padding: 20px;">About</a>
+            <a href="#predict" style="color: white; text-decoration: none; padding: 20px;">Predict</a>
+            <a href="#contact" style="color: white; text-decoration: none; padding: 20px;">Contact</a>
+        </div>
+    </div>
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <div style="text-align: center;">
+                <div style="font-size: 60px;">Welcome to Smart Watch</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about-content">
+        <h1>About</h1>
+        <p>
+          Smartwatches may become more advanced, offering new features and capabilities.
+      </p>
+      <p>
+        The smartwatch market is competitive, with many manufacturers vying for market share. Increased competition can lead to more competitive pricing, especially for mid-range and budget smartwatches.
+      </p>
+      <p>
+        Smartwatches follow typical product lifecycles, with newer models being introduced periodically. When new models are released, older ones may see price reductions to clear inventory.
+      </p>
+       </div>
+  </section>
+
+  <section class="predict" id="predict">
+    <div class="predict_content">
+        <form action="{{url_for('predict')}}" method="post" id="predict-form">
+            <div class="environment-conditions">
+                Brand <br> <input type="text" class="condition-input" name="Brand" placeholder="Enter Brand" required="required" /><br><br>
+                Model<br><input type="text" class="condition-input" name="Model" placeholder="Enter Model" required="required" /><br><br>
+                Operating System <br><input type="text" class="condition-input" name="Operating_System" placeholder="Enter Operating System" required="required" /><br><br>
+                Connectivity<br><input type="text" class="condition-input" name="Connectivity" placeholder="Enter Connectivity" required="required" /><br><br>
+                Display Type <br><input type="text" class="condition-input" name="Display_Type" placeholder="Enter Display Type" required="required" /><br><br>
+                Display Size (inches) <br><input type="text" class="condition-input" name="Display_Size_inches" placeholder="Enter Display Size (inches)" required="required" /><br><br>
+                Height <br><input type="text" class="condition-input" name="height" placeholder="Enter Height" required="required" /><br><br>
+                Weight <br><input type="text" class="condition-input" name="weight" placeholder="Enter Weight" required="required" /><br><br>
+                Water Resistance (meters) <br><input type="text" class="condition-input" name="Water_Resistance_meters" placeholder="Enter Water Resistance (meters)" required="required" /><br><br>
+                Battery Life (days) <br><input type="text" class="condition-input" name="Battery_Life_days" placeholder="Enter Battery Life (days)" required="required" /><br><br>
+                Heart Rate Monitor <br><input type="text" class="condition-input" name="Heart_Rate_Monitor" placeholder="Enter Heart Rate Monitor" required="required" /><br><br>
+                GPS <br><input type="text" class="condition-input" name="GPS" placeholder="Enter GPS" required="required" /><br><br>
+                NFC <br><input type="text" class="condition-input" name="NFC" placeholder="Enter NFC" required="required" /><br><br>
+                <button class="predict-button" type="submit">Submit</button>
+                <br><br>
+                {{ prediction_text }}
+            </div>
+        </form>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <div class="contact-content">
+        <h2>Contact Smart Home Temperature</h2>
+        <p>
+            Have questions or need assistance with our smart watch prices solutions? Feel free to get in touch with us. We're here to help!
+        </p>
+        <div class="contact-form">
+            <form>
+                <input class="form-input" type="text" placeholder="Your Name">
+                <input class="form-input" type="email" placeholder="Your Email">
+                <textarea class="form-textarea" placeholder="Your Message"></textarea>
+                <button class="submit-button" type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+</body>
+</html>
